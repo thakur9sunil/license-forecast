@@ -1,0 +1,36 @@
+stages:
+  generate_data:
+    cmd: python backend/ml/data_generator.py
+    deps:
+      - backend/ml/data_generator.py
+    outs:
+      - backend/data/raw/license_usage.csv
+
+  train_prophet:
+    cmd: python -m ml.train_prophet
+    wdir: backend
+    deps:
+      - ml/train_prophet.py
+      - data/raw/license_usage.csv
+    params:
+      - ml/params.yaml:
+          - prophet
+    outs:
+      - models/prophet/:
+          cache: true
+    metrics:
+      - ml/metrics/prophet_metrics.json:
+          cache: false
+
+  train_arima:
+    cmd: python -m ml.train_arima
+    wdir: backend
+    deps:
+      - ml/train_arima.py
+      - data/raw/license_usage.csv
+    params:
+      - ml/params.yaml:
+          - arima
+    metrics:
+      - ml/metrics/arima_metrics.json:
+          cache: false

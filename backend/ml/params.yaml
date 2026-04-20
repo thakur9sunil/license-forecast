@@ -1,0 +1,9 @@
+prophet:
+  seasonality_mode: multiplicative
+  changepoint_prior_scale: 0.05
+  seasonality_prior_scale: 10.0
+  forecast_horizon: 12
+
+arima:
+  order: [1, 1, 1]
+  seasonal_order: [1, 1, 1, 12]

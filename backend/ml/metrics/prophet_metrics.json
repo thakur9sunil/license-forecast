@@ -1,0 +1,29 @@
+{
+  "Jira": {
+    "seasonality_mode": "multiplicative",
+    "changepoint_prior_scale": 0.3,
+    "seasonality_prior_scale": 1.0,
+    "mae": 168.54591075417295,
+    "rmse": 182.83098598982056,
+    "mape": 0.29492191350565994,
+    "run_id": "f88d1363aee74b1b8eb91cb12967711e"
+  },
+  "Slack": {
+    "seasonality_mode": "multiplicative",
+    "changepoint_prior_scale": 0.1,
+    "seasonality_prior_scale": 1.0,
+    "mae": 195.0278456432343,
+    "rmse": 242.46515889120224,
+    "mape": 0.27308855959074235,
+    "run_id": "54b89e5df30c45178d3092c9882144e3"
+  },
+  "Zoom": {
+    "seasonality_mode": "multiplicative",
+    "changepoint_prior_scale": 0.1,
+    "seasonality_prior_scale": 1.0,
+    "mae": 250.68175358707197,
+    "rmse": 251.31607077060065,
+    "mape": 0.6451070009180008,
+    "run_id": "232bb78014894d6891a2f09c146403bb"
+  }
+}
